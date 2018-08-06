@@ -1,0 +1,23 @@
+{
+  "description": "do something when an image is dragged and released",
+  "manifest_version": 2,
+  "name": "demo drag",
+  "version": "1.0",
+  "author": "Jonathan Bao",
+
+  "permissions": [
+	"http://*/*", 
+    "https://*/*",
+	"downloads"
+  ],
+
+"background": {
+  "scripts": ["background.js"]
+},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
