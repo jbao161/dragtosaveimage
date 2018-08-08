@@ -10,7 +10,7 @@ let imgRegExp = new RegExp("[\/]([^\/]+(?!\/)+)$");
 // regular expression finding the filename after the last slash
 
 
-browser.runtime.onMessage.addListener(
+chrome.runtime.onMessage.addListener(
   function(img_url){
 	 let img_filename = imgRegExp.exec(img_url)[1];
 	 // prefix date and time to filename
@@ -33,7 +33,7 @@ browser.runtime.onMessage.addListener(
 	 +time_digits[4]+"_";
 	 log("current date and time: " + date_time);
 	 log("save request received for: " + img_url);
-     browser.downloads.download({
+     chrome.downloads.download({
      url: img_url,
      filename: date_time + img_filename
     });

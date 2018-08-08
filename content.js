@@ -91,7 +91,7 @@ function detect_image(event){
 		if (is_image){
 		// if so, open save dialog
 			log("opening save dialog for: "+event.target.src);
-			browser.runtime.sendMessage(event.target.src);
+			chrome.runtime.sendMessage(event.target.src);
 		}
 		
 		event.target.style.opacity = 1.0;
